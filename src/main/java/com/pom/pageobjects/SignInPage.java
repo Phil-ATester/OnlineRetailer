@@ -16,6 +16,15 @@ public class SignInPage extends BasePage{
     @FindBy(how = How.CSS, using = ".page-heading")
     private WebElement pageHeading;
 
+    @FindBy(how = How.CSS, using = "#email")
+    private WebElement emailAddressField;
+
+    @FindBy(how = How.CSS, using = "#passwd")
+    private WebElement passwordField;
+
+    @FindBy(how = How.CSS, using = "#SubmitLogin")
+    private WebElement signInBTN;
+
     public SignInPage(WebDriver driver){
         super(driver);
     }
@@ -36,8 +45,11 @@ public class SignInPage extends BasePage{
         return pageHeading.getText().toLowerCase().contains(pageTitle);
     }
 
-    public void clickToNewPage(){
-
+    public AddressPage setExistingUser(String emailAddress, String password){
+        emailAddressField.sendKeys(emailAddress);
+        passwordField.sendKeys(password);
+        signInBTN.click();
+        return new AddressPage(driver);
     }
 
 }

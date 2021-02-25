@@ -25,7 +25,7 @@ public class ProductSearchPage extends BasePage{
     //.product_list>li>div>div>div>a[title="Blouse"]
     public CartPage selectItem(String option) throws InterruptedException {
         for (WebElement e: productList){
-            System.out.println(e.getText());
+            //System.out.println(e.getText());
             if(e.getText().contains(option)){
                 System.out.println("--------------------");
                 System.out.println("Select item : " + "" + e.getText());
@@ -46,6 +46,12 @@ public class ProductSearchPage extends BasePage{
 
     public void selectProceedToCheckOut(){
 
+    }
+
+    public void getSearchResult(){
+        for(WebElement e: productList){
+            System.out.println(e.getText());
+        }
     }
 
 }
