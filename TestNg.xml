@@ -12,7 +12,7 @@
     <test name="Selenium Project Object Model">
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="com.pom.testcases.CheckOutExistingCustomer"></class>
+            <class name="com.pom.testcases.SearchTest"></class>
         </classes>
     </test>
 </suite>
